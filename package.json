@@ -1,7 +1,13 @@
 {
   "name": "confecciones-rimba",
   "version": "0.1.0",
-  "private": true,
+  "author": {
+    "name": "Ariel Calisaya",
+    "email": "calisayaariel62@gmail.com",
+    "url": "https://github.com/ArielCalisaya"
+  },
+  "license": "MIT",
+  "private": false,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
