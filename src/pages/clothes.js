@@ -1,14 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Catalogue from "../components/Catalogue";
 
-const clothes = () => {
+
+function clothes(){
   return (
     <div>
-      <h3>Preziooooo beciiii ropaaa</h3>
-
-      <Link to="/">
-        <p>home</p>
-      </Link>
+      <Catalogue/>
     </div>
   );
 };

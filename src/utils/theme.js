@@ -2,14 +2,14 @@ export default {
   palette: {
     primary: {
       light: "#99AAB5",
-      main: "#7289DA",
-      dark: "#002884",
+      main: "#002884",
+      dark: "#23272A",
       contrastText: "#fff",
     },
     secondary: {
-      light: "#99AAB5",
-      main: "#23272A",
-      dark: "#000000",
+      light: "#7289DA",
+      main: "#ffffff",
+      dark: "#23272A",
       contrastText: "#fff",
     },
   },
@@ -17,5 +17,5 @@ export default {
     form: {
       textAlign: "center",
     },
-  },
+  }
 };
