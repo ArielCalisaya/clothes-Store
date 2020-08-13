@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+
+.nav-container {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-container svg { 
+  color: white
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+.mtop-80px {
+  margin-top: 80px;
+}

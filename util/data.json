@@ -1,0 +1,90 @@
+[
+  {
+    "_id": 1,
+    "tipo": "Pantalon",
+    "color": "Negro",
+    "precio": "6000",
+    "imagen": "example/url",
+    "talla_S": {
+      "_id": 1,
+      "talla": "S",
+      "cantidad": 5
+    },
+    "talla_M": {
+      "_id": 2,
+      "talla": "M",
+      "cantidad": 18
+    },
+    "talla_L": {
+      "_id": 3,
+      "talla": "L",
+      "cantidad": 8
+    }
+  },
+  {
+    "_id": 2,
+    "tipo": "Poleron",
+    "color": "Azul",
+    "precio": "6000",
+    "imagen": "example/url",
+    "talla_S": {
+      "_id": 1,
+      "talla": "S",
+      "cantidad": 2
+    },
+    "talla_M": {
+      "_id": 2,
+      "talla": "M",
+      "cantidad": 7
+    },
+    "talla_L": {
+      "_id": 3,
+      "talla": "L",
+      "cantidad": 10
+    }
+  },
+  {
+    "_id": 3,
+    "tipo": "Poleron",
+    "color": "Azul Oscuro",
+    "precio": "6000",
+    "imagen": "example/url",
+    "talla_S": {
+      "_id": 1,
+      "talla": "S",
+      "cantidad": 19
+    },
+    "talla_M": {
+      "_id": 2,
+      "talla": "M",
+      "cantidad": 22
+    },
+    "talla_L": {
+      "_id": 3,
+      "talla": "L",
+      "cantidad": 25
+    }
+  },
+  {
+    "_id": 4,
+    "tipo": "Pantalon",
+    "color": "Amarillo",
+    "precio": "6000",
+    "imagen": "example/url",
+    "talla_S": {
+      "_id": 1,
+      "talla": "S",
+      "cantidad": 14
+    },
+    "talla_M": {
+      "_id": 2,
+      "talla": "M",
+      "cantidad": 19
+    },
+    "talla_L": {
+      "_id": 3,
+      "talla": "L",
+      "cantidad": 27
+    }
+  }
+]
