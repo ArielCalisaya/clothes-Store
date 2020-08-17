@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import home from "./pages/home";
 import clothes from "./pages/clothes";
 import Navbar from "./components/Navbar";
-import "./App.css";
+import "./styles/App.css";
 
 // Material Default theme and personalization
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";

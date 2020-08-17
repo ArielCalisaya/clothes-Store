@@ -3,7 +3,8 @@ import FacebookIcon from "../assets/icons/facebook.png";
 import TwitterIcon from "../assets/icons/twitter.png";
 import EmailIcon from "../assets/icons/email.png";
 import InstagramIcon from "../assets/icons/instagram.png";
-import PressKey from "../functions/pressKey";
+import PressKey from "../utils/pressKey";
+import { Link } from "react-router-dom";
 
 /* Hint: This component Provides an handle that opens 
 the navbar with Space keyboar */
@@ -24,7 +25,10 @@ const Navbar = () => {
   };
   // Personal Handler
   // function (Keyboardname, handle)
+  // Warning: When using space on form
+  // TODO: Find and learn for a usefull solution
   PressKey("Space", handleEnter);
+
 
   return (
     <Fragment>
@@ -32,7 +36,7 @@ const Navbar = () => {
       <div className={`navigation ${isToggled.toString()}`}>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/ropa">Store</Link>
           </li>
           <li>
             <a href="/">About</a>
