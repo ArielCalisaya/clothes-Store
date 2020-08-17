@@ -8,7 +8,7 @@ function home(){
         <HalloweenLogo style={{width:"180px"}}/>
 
         <p>lorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsu
-        lorem ipsulorem ipsulorem ipsu
+        lorem ipsulorem ipsulorem ipsu 
         lorem ipsuvlorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsu
         vlorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsuvv
         vvvvvvvvvvvvvvvvvvvvvvvvlorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem 
