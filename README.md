@@ -1,4 +1,4 @@
-This project is an MERN app Rimba project [Rimba-clothes](https://github.com/ArielCalisaya/rimba).
+This project is a MERN app for [Rimba-Clothes](https://github.com/ArielCalisaya/rimba).
 
 ## Available Scripts
 
