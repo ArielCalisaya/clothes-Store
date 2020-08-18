@@ -1,8 +1,7 @@
-const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
-dotenv.config();
-const mongodburl = process.env.MONGODB_URI || process.env.MONGODB_URL;
+const mongodburl = process.env.MONGODB_URI || "mongodb://localhost:26040/rimba";
+
 mongoose
   .connect(mongodburl, {
     useNewUrlParser: true,

@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <Fragment>
-      <div className={`menuToggle ${isToggled.toString()}`} />
+      <div className={`menuToggle ${isToggled.toString()}`} onClick={handleEnter} />
       <div className={`navigation ${isToggled.toString()}`}>
         <ul>
           <li>
