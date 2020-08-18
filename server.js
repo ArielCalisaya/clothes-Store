@@ -3,7 +3,10 @@ const userRoute = require("./src/routes/userRoute");
 const bodyP = require("body-parser");
 const express = require("express");
 const dotenv = require("dotenv");
+
+/* Development Dependences ---------
 const morgan = require("morgan");
+app.use(morgan("dev")); */
 
 // DB configuration
 require("./util/configDB");
@@ -18,7 +21,6 @@ const PORT = process.env.PORT || 3330;
 
 app.use(bodyP.json());
 app.use(bodyP.urlencoded({ extended: false }));
-app.use(morgan("dev"));
 
 app.use("/api/users/", userRoute);
 app.use("/api/clothes/", clothesRoute);
