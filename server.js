@@ -2,7 +2,6 @@ const clothesRoute = require("./src/routes/clothesRoute");
 const userRoute = require("./src/routes/userRoute");
 const bodyP = require("body-parser");
 const express = require("express");
-const dotenv = require("dotenv");
 
 /* Development Dependences ---------
 const morgan = require("morgan");
