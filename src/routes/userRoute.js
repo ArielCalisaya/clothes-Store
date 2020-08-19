@@ -1,11 +1,36 @@
 const User = require("../models/uADM");
+const getToken = require("../../util/token")
 const express = require("express");
 const router = express.Router();
 
 let response = {};
 
+
+
+// Signin User
+
+router.post("/signin/", async(req, res) => {
+  const siginUser = await User.findOne({
+    email: req.body.email,
+    password: req.body.password
+  })
+  if(siginUser){
+      res.send({
+        _id: siginUser.id,
+        name: siginUser.name,
+        email: siginUser.email,
+        isADM: siginUser.isADM,
+        token: getToken(user)
+
+      })
+  } else {
+    res.status(401).send({msg: "Invalid Email or Password"})
+  }
+})
+
+
 // Get all user from DB
-router.route("/all").get((req, res) => {
+router.get("/all", (req, res) => {
   User.find({}, (err, data) => {
     // Fetch all data from collection
     if (!err) {
@@ -18,7 +43,7 @@ router.route("/all").get((req, res) => {
 });
 
 // Get user by id
-router.route("/user/:id").get((req, res) => {
+router.get("/user/:id", (req, res) => {
   let id = req.params.id;
 
   User.findById(id, (err, data) => {
@@ -33,7 +58,7 @@ router.route("/user/:id").get((req, res) => {
 });
 
 //  Create new User
-router.route("/user/new").post((req, res) => {
+router.post("/user/new", (req, res) => {
   let db = new User();
   let encriptIt = require("crypto").createHash("md5");
   db.name = req.body.name;
@@ -50,7 +75,7 @@ router.route("/user/new").post((req, res) => {
 });
 
 // Change user information
-router.route("/change/:id").put((req, res) => {
+router.put("/change/:id", (req, res) => {
   let id = req.params.id;
 
   User.findById(id, (err, data) => {
@@ -83,7 +108,7 @@ router.route("/change/:id").put((req, res) => {
 });
 
 // Delete user
-router.route("/delete/:id").delete((req, res) => {
+router.delete("/delete/:id", (req, res) => {
   let response = {};
   let id = req.params.id;
   User.findById(id, (err, data) => {
@@ -96,7 +121,10 @@ router.route("/delete/:id").delete((req, res) => {
         if (err) {
           response = { error: true, msg: "Error deleting data :C" };
         } else {
-          response = { error: true, msg: `User with id:${id} has been removed` };
+          response = {
+            error: true,
+            msg: `User with id:${id} has been removed`,
+          };
         }
         res.json(response);
       });
@@ -114,8 +142,8 @@ router.get("/createADM", async (req, res) => {
         "29045pof4po2,eo120'e1e2Portamemememoonnldelp2034903.,.,.SSSavedok",
       isADM: false,
     });
-    await user.save();
-    res.send(user);
+    const newUser = await user.save();
+    res.send(newUser);
   } catch (error) {
     res.send({ msg: error.message });
   }
