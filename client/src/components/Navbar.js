@@ -6,40 +6,41 @@ import InstagramIcon from "../assets/icons/instagram.png";
 import PressKey from "../utils/pressKey";
 import { Link } from "react-router-dom";
 
-/* Hint: This component Provides an handle that opens 
-the navbar with Space keyboar */
+/* Hint: PressKey component Provides an handle that opens 
+the navbar with Space keyboard */
 
 const Navbar = () => {
   const [isToggled, setToggled] = useState("");
-
-
+  
+  
   // ------------------------------------
   const handleEnter = () => {
     console.log("Enter key is pressed");
     switch (isToggled) {
       case "":
         return setToggled("active");
-      default:
+        default:
         return setToggled("");
-    }
-  };
-  // Personal Handler
-  // function (Keyboardname, handle)
-  // Warning: When using space on form
-  // TODO: Find and learn for a usefull solution
-  PressKey("Space", handleEnter);
-
+      }
+    };
+    // Personal Handler
+    // function (Keyboardname, handle)
+    // Warning: When using space on form
+    // TODO: Find and learn for a usefull solution 
+    //Working with it
+    PressKey("Space", handleEnter);
+  
 
   return (
     <Fragment>
-      <div className={`menuToggle ${isToggled.toString()}`} onClick={handleEnter} />
-      <div className={`navigation ${isToggled.toString()}`}>
+      <div className={`menuToggle ${isToggled}`} onClick={handleEnter} />
+      <div className={`navigation ${isToggled}`} onClick={handleEnter}>
         <ul>
-          <li>
-            <Link to="/ropa">Store</Link>
+        <li>
+        <Link to="/">Inicio</Link>
           </li>
           <li>
-            <a href="/">About</a>
+            <Link to="/ropa">Ropa</Link>
           </li>
           <li>
             <a href="/">clothes</a>

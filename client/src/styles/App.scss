@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 * {
   margin: 0;
@@ -26,6 +27,12 @@ section {
     font-size: 2em;
     z-index: 100;
     cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   .bg {
     position: absolute;
@@ -39,14 +46,14 @@ section {
     z-index: 1;
     h2 {
       color: #ffffff;
-      font-size: 3em;
+      font-size: 2.5em;
       font-weight: 700;
       line-height: 1.1em;
     }
     p {
       color: #ffffff;
       font-size: 1.1em;
-      margin: 20px 0 10px;
+      margin: 25px 0 10px;
     }
     a {
       color: #ffffff;
@@ -62,7 +69,7 @@ section {
   }
 }
 .copyrightText {
-    position: absolute;
+  position: absolute;
   bottom: 20px;
   color: #ffffff;
   font-size: 1.1em;
@@ -70,111 +77,110 @@ section {
 }
 
 .menuToggle {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 60px;
-    background: #f60f20 url(../assets/icons/menu.png);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: #f60f20 url(../assets/icons/menu.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  &.active {
+    background: #f60f20 url(../assets/icons/close.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px;
-    cursor: pointer;
-    z-index: 1000;
-    &.active{
-        background: #f60f20 url(../assets/icons/close.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 30px;
-    }
-} 
+  }
+}
 .navigation {
-    position: fixed;
-    top: 0;
-    left: calc(100% - 60px);
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.2s;
-    &.active {
-        left: 0px;
-    }
-    ul {
-        position: relative;
-        li {
-            position: relative;
-            list-style: none;
-            text-align: center;
-            a {
-                font-size: 2.5em;
-                color: #111111;
-                text-decoration: none;
-                font-weight: 300;
-                &:hover {
-                    color: #f60f20;
-                }
-            }
+  position: fixed;
+  top: 0;
+  left: calc(100% - 60px);
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  &.active {
+    left: 0px;
+  }
+  ul {
+    position: relative;
+    li {
+      position: relative;
+      list-style: none;
+      text-align: center;
+      a {
+        font-size: 2.5em;
+        color: #111111;
+        text-decoration: none;
+        font-weight: 300;
+        &:hover {
+          color: #f60f20;
         }
+      }
     }
+  }
 }
 .socialBar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 100%;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ul {
+    position: relative;
+    li {
+      position: relative;
+      list-style: none;
+      a {
         position: relative;
-        li {
-            position: relative;
-            list-style: none;
-            a {
-                position: relative;
-                display: inline-block;
-                transform: scale(0.6);
-            }
-        }
-    }
-    .emailBx {
-        position: absolute;
-        bottom: 20px;
+        display: inline-block;
         transform: scale(0.6);
-        
+      }
     }
+  }
+  .emailBx {
+    position: absolute;
+    bottom: 20px;
+    transform: scale(0.6);
+  }
 }
 
 @media (max-width: 767px) {
-    section{
-        padding: 100px 40px;
-        .content h2 {
-                font-size: 2.5em;
-        }
-        .bg {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.5;
-        }
-        .logo {
-            top: 10px;
-            font-size: 1.5em;
-        }
+  section {
+    padding: 100px 40px;
+    .content h2 {
+      font-size: 2.5em;
     }
-    .navigation{
-        left: 100%;
+    .bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
     }
-    .menuToggle {
-        border-bottom-left-radius: 10px;
+    .logo {
+      top: 10px;
+      font-size: 1.5em;
     }
+  }
+  .navigation {
+    left: 100%;
+  }
+  .menuToggle {
+    border-bottom-left-radius: 10px;
+  }
 }

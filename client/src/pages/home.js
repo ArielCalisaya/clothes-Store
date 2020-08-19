@@ -5,22 +5,23 @@ function home(){
   return (
     <div >
         <section>
-        <div className="logo"> Creative</div>
+        <div className="logo">Rimba</div>
         <img src={BGirl} alt="" className="bg" />
         <div className="content">
           <h2>
-            let's make
+            Ropa con
             <br />
-            somthing creative
+            Telas de calidad
           </h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur
-            quam quisquam accusamus. Porro ea, quam commodi animi mollitia, vero
-            nemo aut cumque rem voluptas culpa id sequi tempora unde sint.
+            En Confecciones Rimba, con mas de 20 años en el mercado decidimos dar un paso mas 
+            en la venta de ropa confeccionada con telas nacionales de calidad. 
+            </p>
+            <hr/>
+            <p>
+            Aquí podras encontrar desde polerones de algodon hasta pantalones y varios tipos de telas.
           </p>
-          <p>Example form, try use Space key</p>
-        <form action=""><input type="text"/></form>
-          <a href="/"> Get Started</a>
+          
         </div>
         <p className="copyrightText">©2020. Rimba's Clothes</p>
       </section>
