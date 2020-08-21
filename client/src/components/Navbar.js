@@ -11,33 +11,31 @@ the navbar with Space keyboard */
 
 const Navbar = () => {
   const [isToggled, setToggled] = useState("");
-  
-  
+
   // ------------------------------------
   const handleEnter = () => {
     console.log("Enter key is pressed");
     switch (isToggled) {
       case "":
         return setToggled("active");
-        default:
+      default:
         return setToggled("");
-      }
-    };
-    // Personal Handler
-    // function (Keyboardname, handle)
-    // Warning: When using space on form
-    // TODO: Find and learn for a usefull solution 
-    //Working with it
-    PressKey("Space", handleEnter);
-  
+    }
+  };
+  // Personal Handler
+  // function (Keyboardname, handle)
+  // Warning: When using space on form
+  // TODO: Find and learn for a usefull solution
+  //Working with it
+  PressKey("Space", handleEnter);
 
   return (
     <Fragment>
       <div className={`menuToggle ${isToggled}`} onClick={handleEnter} />
       <div className={`navigation ${isToggled}`} onClick={handleEnter}>
         <ul>
-        <li>
-        <Link to="/">Inicio</Link>
+          <li>
+            <Link to="/">Inicio</Link>
           </li>
           <li>
             <Link to="/ropa">Ropa</Link>
@@ -46,7 +44,7 @@ const Navbar = () => {
             <a href="/">clothes</a>
           </li>
           <li>
-            <a href="/">Account</a>
+            <a href="/signin">Account</a>
           </li>
         </ul>
         <div className="socialBar">

@@ -3,18 +3,24 @@ import { Link } from "react-router-dom";
 
 
 const signPage = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    // const [email, setEmail] = useState('')
+    // const [password, setPassword] = useState('')
 
     const submitHandler = (e) => {
         e.preventDefault()
+        dispatch(signin(email, password))
     }
+
+
     return (
-    <div className="">
+    <div className="form">
       <form onSubmit={submitHandler}>
         <ul className="form-container">
           <li>
-            <label for="email">Email</label>
+            <h3>Crear Cuenta</h3>
+          </li>
+          <li>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
