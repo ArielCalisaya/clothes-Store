@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch,  } from "react-router-dom";
-import home from "./pages/home";
-import clothes from "./pages/clothes";
-import signin from './pages/signIn'
+import Home from "./pages/home";
+import Clothes from "./pages/clothes";
+import Signin from './pages/signIn'
 import Navbar from "./components/Navbar";
 import "./styles/App.css";
 
@@ -19,9 +19,9 @@ function App() {
         <Navbar />
         <div className="App">
           <Switch>
-            <Route exact path="/" component={home} />
-            <Route exact path="/ropa" component={clothes} />
-            <Route exact path= "/signin" component={signin} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/ropa" component={Clothes} />
+            <Route exact path= "/signin" component={Signin} />
           </Switch>
         </div>
       </Router>

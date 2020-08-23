@@ -1,7 +1,7 @@
 import React from "react";
 import BGirl from "../assets/bg.jpg";
 
-function home() {
+function Home() {
   return (
     <div>
       <section>
@@ -29,4 +29,4 @@ function home() {
     </div>
   );
 }
-export default home;
+export default Home;

@@ -1,20 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 
-const signPage = () => {
+const Signin = () => {
     // const [email, setEmail] = useState('')
     // const [password, setPassword] = useState('')
 
-    const submitHandler = (e) => {
-        e.preventDefault()
-        dispatch(signin(email, password))
-    }
+    // const submitHandler = (e) => {
+    //     e.preventDefault()
+    //     dispatch(signin(email, password))
+    // }
 
 
     return (
     <div className="form">
-      <form onSubmit={submitHandler}>
+      <form 
+      // onSubmit={submitHandler}
+      >
         <ul className="form-container">
           <li>
             <h3>Crear Cuenta</h3>
@@ -25,7 +27,7 @@ const signPage = () => {
               type="email"
               name="email"
               id="email"
-              onChange={(e) => setEmail(e.target.value)}
+              // onChange={(e) => setEmail(e.target.value)}
             />
           </li>
           <li>
@@ -34,7 +36,7 @@ const signPage = () => {
               type="password"
               name="password"
               id="password"
-              onChange={(e) => setPassword(e.target.value)}
+              // onChange={(e) => setPassword(e.target.value)}
             />
           </li>
           <li>
@@ -52,4 +54,4 @@ const signPage = () => {
   );
 };
 
-export default signPage;
+export default Signin;
