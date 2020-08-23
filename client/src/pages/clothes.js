@@ -7,12 +7,13 @@ function Clothes(props) {
   const productList = useSelector((state) => state.clothesList);
   const { products, loading, error } = productList;
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(clothesList());
     return () => {
       //
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   console.log(products)
 
@@ -23,7 +24,7 @@ function Clothes(props) {
   ) : (
     <div className="mtop-80px">
       <ul>
-        <p> Fetched Products</p>
+        <h1> Catalogo de Productos</h1>
         {products.map((product) => (
           <Fragment key={product._id}>
             <MapPrenda prenda={product} />
