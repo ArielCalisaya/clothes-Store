@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const mongodburl = process.env.MONGODB_URI || "mongodb://localhost:26040/rimba";
+const mongodburl = process.env.MONGODB_URI || "mongodb://localhost:2703/rimba";
 
 mongoose
   .connect(mongodburl, {
