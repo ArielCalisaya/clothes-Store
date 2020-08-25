@@ -21,7 +21,7 @@ router.get("/:id", (req, res) => {
   let id = req.params.id;
   Clothes.findById(id, (err, data) => {
     if (err) {
-      response = { error: true, msg: "User doesn't exist" };
+      response = { error: true, msg: "Clothes doesn't exist" };
     } else {
       response = { error: false, msg: data };
     }
@@ -36,6 +36,7 @@ router.post("/new",(req, res) => {
   db.color = req.body.color;
   db.precio = req.body.precio;
   db.imagen = req.body.imagen;
+  db.img_sides = req.body.img_sides;
   db.talla_S = req.body.talla_S;
   db.talla_M = req.body.talla_M;
   db.talla_L = req.body.talla_L;
@@ -69,6 +70,9 @@ router.put("/edit/:id", (req, res) => {
     }
     if (req.body.imagen !== undefined) {
       data.imagen = req.body.imagen;
+    }
+    if (req.body.img_sides !== undefined) {
+      data.img_sides = req.body.img_sides;
     }
     if (req.body.talla_S !== undefined) {
       data.talla_S = req.body.talla_S;
@@ -114,27 +118,34 @@ router.delete("/delete/:id", (req, res) => {
 
 
 // Create Example Clothe on DB
-router.get("/create", async (req, res) => {
+router.get("/make/new", async (req, res) => {
   try {
     const clothes = new Clothes({
-      tipo: "Jogger",
-      color: "Verde Claro",
+      tipo: "Poleron",
+      color: "Celeste",
       precio: 7000,
       imagen: "etc/noimg",
+      // img_sides: {
+      //   img_R: "Right_Img",
+      //   img_L: "Left_Img"
+      // },
       talla_S: {
-        cantidad: 13,
+        talla: "S",
+        cantidad: 10,
       },
       talla_M: {
-        cantidad: 16,
+        talla: "M",
+        cantidad: 12,
       },
       talla_L: {
-        cantidad: 19,
+        talla: "L",
+        cantidad: 1,
       },
     });
-    await clothes.save();
-    res.send(clothes);
+     const createClothe = await clothes.save();
+    res.send(createClothe);
   } catch (error) {
-    res.status(301).send({ msg: error.message });
+    res.send({ msg: error.message });
   }
 });
 

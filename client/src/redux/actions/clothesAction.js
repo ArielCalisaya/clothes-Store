@@ -21,6 +21,7 @@ const clothesList = () => async (dispatch)=> {
 }
 export {clothesList}
 
+// Ref
 // axios.get("/api/clothes/all").then((res) => {
 //     console.log(res.data);
 //     if (res.data.result.length > 0) {

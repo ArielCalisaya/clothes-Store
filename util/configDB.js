@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const mongodburl = process.env.MONGODB_URI || "mongodb://localhost:2703/rimba";
+// In Dev. environment probably want to change the port depending on the local mongodb server
+const mongodburl = process.env.MONGODB_URI || "mongodb://localhost:27017/rimba";
 
 mongoose
   .connect(mongodburl, {

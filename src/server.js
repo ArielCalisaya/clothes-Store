@@ -1,5 +1,5 @@
-const clothesRoute = require("./src/routes/clothesRoute");
-const userRoute = require("./src/routes/userRoute");
+const clothesRoute = require("./routes/clothesRoute");
+const userRoute = require("./routes/userRoute");
 const bodyP = require("body-parser");
 const express = require("express");
 
@@ -8,7 +8,7 @@ const morgan = require("morgan");
 app.use(morgan("dev")); */
 
 // DB configuration
-require("./util/configDB");
+require("../util/configDB");
 
 //config
 const app = express();
