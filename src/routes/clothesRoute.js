@@ -17,13 +17,13 @@ router.get("/all", (req, res) => {
 });
 
 // Get Clothe details
-router.get("/:id", (req, res) => {
+router.get("/get/:id", (req, res) => {
   let id = req.params.id;
   Clothes.findById(id, (err, data) => {
     if (err) {
       response = { error: true, msg: "Clothes doesn't exist" };
     } else {
-      response = { error: false, msg: data };
+      response = { error: false, result: data };
     }
     res.json(response);
   });
