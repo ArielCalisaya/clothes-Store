@@ -82,14 +82,14 @@ section {
   right: 0;
   width: 60px;
   height: 60px;
-  background: #f60f20 url(../assets/icons/menu.png);
+  background: #f60f20 url(../icons/menu.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 30px;
   cursor: pointer;
   z-index: 1000;
   &.active {
-    background: #f60f20 url(../assets/icons/close.png);
+    background: #f60f20 url(../icons/close.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px;
@@ -229,3 +229,10 @@ section {
     }
   }
 }
+.textWhite {
+  color: #ffffff;
+}
+    .link-style123 a {
+      text-decoration: none;
+      color: #9be08a;
+    }

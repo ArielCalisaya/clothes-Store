@@ -1,35 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MapTallas from "./MapTallas";
 
-const MapPrenda = (props) => {
+const MapPrendas = (props) => {
   const {
-    prenda: {
-      _id,
-      tipo,
-      color,
-      precio,
-      imagen,
-      img_sides,
-      talla_S,
-      talla_M,
-      talla_L,
-    },
+    prenda: { _id, tipo, color, precio, imagen, talla_S, talla_M, talla_L },
   } = props;
 
   return (
-    <>
-      <li>Id: {_id}</li>
+    <div className="textWhite">
+      <li className="link-style123">
+        <Link to={`/ropa/${_id}`}>Id: {_id}</Link>
+      </li>
       <li>Color: {color}</li>
       <li>Imagen: {imagen}</li>
-      <li>
-        Imagen Lados:
-        {img_sides.map((img) => (
-          <p>
-            Lado Derecho:{img.img_R} <br />
-            Lado Izquierdo: {img.img_L}
-          </p>
-        ))}
-      </li>
       <li>Tipo: {tipo}</li>
       <li>Precio: {precio}</li>
       <MapTallas
@@ -38,7 +22,7 @@ const MapPrenda = (props) => {
         talla_L={talla_L}
         key={_id}
       />
-    </>
+    </div>
   );
 };
-export default MapPrenda;
+export default MapPrendas;
