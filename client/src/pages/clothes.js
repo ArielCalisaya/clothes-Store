@@ -14,6 +14,10 @@ function Clothes() {
       //
     };
   }, []);
+  if (!products) {
+    return null;
+  }
+
   console.log(products);
 
   return loading ? (
@@ -21,19 +25,16 @@ function Clothes() {
   ) : error ? (
     <div>{error}</div>
   ) : (
-    <div className="mtop-80px">
-      <button className="btn btn-blue btn-blue:hover">Botón</button>
-      <ul>
-        <h1> Catalogo de Productos</h1>
+    <div className="container mx-auto flex flex-wrap pb-12 padding-nav-size">
+        <h1 className="w-full my-6 text-5xl font-bold leading-tight text-center text-white">
+          Catalogo de Prendas
+        </h1>
         {products.map((product) => (
           <Fragment key={product._id}>
             <MapPrendas prenda={product} />
-            <br />
-            <br />
           </Fragment>
         ))}
-      </ul>
-    </div>
+      </div>
   );
 }
 
