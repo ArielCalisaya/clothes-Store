@@ -5,25 +5,31 @@
 @tailwind utilities;
 
 .btn {
-    @apply py-2 px-4 rounded;
+  @apply py-2 px-4 rounded;
 }
 
-.btn-blue{
-    @apply bg-blue-400 text-white;
+.btn-blue {
+  @apply bg-blue-400 text-white;
 }
 
-.btn-blue:hover{
-    @apply bg-blue-700;
+.btn-blue:hover {
+  @apply bg-blue-700;
 }
 .btn-purple:hover {
-    @apply bg-purple-500
+  @apply bg-purple-500;
 }
-.btn-purple{
-    @apply bg-purple-400
+.btn-purple {
+  @apply bg-purple-400;
 }
-.padding-nav-size {
-    padding-right: 3.8rem;
+/* @Resposinve call responsive(lg, md, sm, and more) rendering for this class style to app.css output */
+@responsive {
+    .padding-nav-size {
+        padding-right: 3.8rem;
+    }
 }
 .orange-gradient {
-    background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
+.image-content {
+  z-index: 2;
 }

@@ -25,7 +25,7 @@ function Clothes() {
   ) : error ? (
     <div>{error}</div>
   ) : (
-    <div className="container mx-auto flex flex-wrap pb-12 padding-nav-size">
+    <div className="container mx-auto flex flex-wrap md:padding-nav-size">
         <h1 className="w-full my-6 text-5xl font-bold leading-tight text-center text-white">
           Catalogo de Prendas
         </h1>
