@@ -9,7 +9,6 @@ import {
 import axios from "axios";
 
 const clothesList = () => async (dispatch) => {
-  // probar poner aqui
   try {
     dispatch({ type: CLOTHES_LIST_REQUEST });
     const { data } = await axios.get("/api/clothes/all");
@@ -26,6 +25,8 @@ const clothesList = () => async (dispatch) => {
 };
 
 const detailsProduct = (productId) => async (dispatch) => {
+  // probar poner aqui problema al renderizar contenido de objeto talla_L
+  // dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
     const { data } = await axios.get(`/api/clothes/get/${productId}`);
