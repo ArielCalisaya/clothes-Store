@@ -67,7 +67,7 @@ router.post("/login", (req, res) => {
   const emailReq = req.body.email;
   const passwordReq = req.body.password;
 
-  const signinUser = User.findOne({
+  User.findOne({
     $or: [{ email: emailReq }, { password: passwordReq }],
   })
   .then((user) => {
@@ -79,7 +79,7 @@ router.post("/login", (req, res) => {
         if (result) {
           
           res.json({
-            message: "login successfully accepted",
+            message: "Login successfully accepted",
             token: getToken(user),
           });
         } else {
@@ -92,18 +92,6 @@ router.post("/login", (req, res) => {
       res.json({ message: "No user Found" });
     }
   });
-
-  // if (signinUser) {
-  //   res.send({
-  //     _id: signinUser.id,
-  //     name: signinUser.name,
-  //     email: signinUser.email,
-  //     isADM: signinUser.isADM,
-  //     token: getToken(signinUser),
-  //   });
-  // } else {
-  //   res.status(401).send({ msg: "Invalid Email or Password" });
-  // }
 });
 
 // Change user information

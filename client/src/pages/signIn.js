@@ -16,7 +16,7 @@ const SignIn = (props) => {
       props.history.push("/ropa")
     }
     return () => {
-      // Stoped at 3:38:09 / 5:06:23
+      //
     }
   }, [userInfo])
 
