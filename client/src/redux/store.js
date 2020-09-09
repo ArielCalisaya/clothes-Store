@@ -9,7 +9,7 @@ const reducer = combineReducers({
     //states
     clothesList : clothesListReducer,
     productDetails: clothesDetailsReducer,
-    userList: userSigninReducer
+    userSignin: userSigninReducer
 })
 
 // Redux Devtools Google ext config, Delete on production step

@@ -41,10 +41,10 @@ const Navbar = () => {
             <Link to="/ropa">Ropa</Link>
           </li>
           <li>
-            <a href="/">clothes</a>
+            <Link href="/">clothes</Link>
           </li>
           <li>
-            <a href="/signin">Account</a>
+            <Link href="/signin">Account</Link>
           </li>
         </ul>
         <div className="socialBar">

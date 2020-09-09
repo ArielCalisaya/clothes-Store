@@ -1,33 +1,11 @@
 const User = require("../models/uADM");
-const getToken = require("../../util/token")
+const {getToken} = require("../../util/token");
 const express = require("express");
+const bcryp = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const router = express.Router();
 
 let response = {};
-
-
-
-// Signin User
-
-router.post("/signin/", async(req, res) => {
-  const siginUser = await User.findOne({
-    email: req.body.email,
-    password: req.body.password
-  })
-  if(siginUser){
-      res.send({
-        _id: siginUser.id,
-        name: siginUser.name,
-        email: siginUser.email,
-        isADM: siginUser.isADM,
-        token: getToken(user)
-
-      })
-  } else {
-    res.status(401).send({msg: "Invalid Email or Password"})
-  }
-})
-
 
 // Get all user from DB
 router.get("/all", (req, res) => {
@@ -57,21 +35,75 @@ router.get("/user/:id", (req, res) => {
   });
 });
 
-//  Create new User
+//  Create new User / Register
 router.post("/user/new", (req, res) => {
-  let db = new User();
-  let encriptIt = require("crypto").createHash("md5");
-  db.name = req.body.name;
-  db.email = req.body.email;
-  db.password = encriptIt.update(req.body.password).digest("base64");
-  db.save((err) => {
+  bcryp.hash(req.body.password, 10, (err, hashedPass) => {
     if (err) {
-      response = { error: true, msg: "Error creating user" };
-    } else {
-      response = { error: false, msg: "User created Succesfully ;D" };
+      res.json({ error: err });
     }
-    res.json(response);
+
+    let user = new User({
+      name: req.body.name,
+      email: req.body.email,
+      password: hashedPass
+    });
+    user
+      .save()
+      .then((user) => {
+        res.json({
+          message: "User Created Successfully!",
+        });
+      })
+      .catch((error) => {
+        res.json({
+          message: "This email already exist",
+        });
+      });
   });
+});
+
+// Signin User
+router.post("/login", (req, res) => {
+  const emailReq = req.body.email;
+  const passwordReq = req.body.password;
+
+  const signinUser = User.findOne({
+    $or: [{ email: emailReq }, { password: passwordReq }],
+  })
+  .then((user) => {
+    if (user) {
+      bcryp.compare(passwordReq, user.password, (err, result) => {
+        if (err) {
+          res.json({ error: err });
+        }
+        if (result) {
+          
+          res.json({
+            message: "login successfully accepted",
+            token: getToken(user),
+          });
+        } else {
+          res.json({
+            message: "Email or Password doesn't Match",
+          });
+        }
+      });
+    } else {
+      res.json({ message: "No user Found" });
+    }
+  });
+
+  // if (signinUser) {
+  //   res.send({
+  //     _id: signinUser.id,
+  //     name: signinUser.name,
+  //     email: signinUser.email,
+  //     isADM: signinUser.isADM,
+  //     token: getToken(signinUser),
+  //   });
+  // } else {
+  //   res.status(401).send({ msg: "Invalid Email or Password" });
+  // }
 });
 
 // Change user information

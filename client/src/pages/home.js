@@ -14,7 +14,7 @@ function Home() {
             Telas de calidad
           </h2>
           <p>
-            En Confecciones Rimba, con mas de 20 años en el mercado decidimos
+            En Confecciones Rimba, con mas de 20 años confeccionando decidimos
             dar un paso mas en la venta de ropa confeccionada con telas
             nacionales de calidad.
           </p>

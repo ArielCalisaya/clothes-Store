@@ -1,6 +1,6 @@
 const clothesRoute = require("./routes/clothesRoute");
 const userRoute = require("./routes/userRoute");
-const bodyP = require("body-parser");
+const bodyParser = require("body-parser");
 const express = require("express");
 
 /* Development Dependences ---------
@@ -14,12 +14,11 @@ require("../util/configDB");
 const app = express();
 const PORT = process.env.PORT || 3330;
 
-app.use(bodyP.json());
-app.use(bodyP.urlencoded({ extended: false }));
-
+app.use(bodyParser.json());
 app.use("/api/users/", userRoute);
 app.use("/api/clothes/", clothesRoute);
 
+// Config for deploy
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   const path = require("path");
