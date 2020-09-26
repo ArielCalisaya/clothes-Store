@@ -11,7 +11,7 @@ const SignIn = (props) => {
   const { loading, userInfo, error } = userSignin;
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useEffect((props) => {
     if(userInfo) {
       props.history.push("/ropa")
     }
@@ -20,6 +20,7 @@ const SignIn = (props) => {
     }
   }, [userInfo])
 
+  console.log(error)
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(signin(email, password));
@@ -44,7 +45,7 @@ const SignIn = (props) => {
             />
           </li>
           <li>
-            <label for="password">Contraseña</label>
+            <label htmlFor="password">Contraseña</label>
             <input
               type="password"
               name="password"

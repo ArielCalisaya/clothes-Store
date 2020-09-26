@@ -13,7 +13,8 @@ function Clothes() {
     return () => {
       //
     };
-  }, []);
+  }, [dispatch]);
+  
   if (!products) {
     return null;
   }
@@ -25,20 +26,21 @@ function Clothes() {
   ) : error ? (
     <div>{error}</div>
   ) : (
-    <div className="container mx-auto flex flex-wrap md:padding-nav-size">
+    <div className="container flex flex-wrap mx-auto md:padding-nav-size">
         <h1 className="w-full my-6 text-5xl font-bold leading-tight text-center text-white">
           Catalogo de Prendas
         </h1>
+        <div className="w-full clothes-container contents">
         {products.map((product) => (
           <Fragment key={product._id}>
             <MapPrendas prenda={product} />
           </Fragment>
         ))}
+        </div>
       </div>
   );
 }
 
 export default Clothes;
 
-// Stoped on min 2:07:15
-// https://www.youtube.com/watch?v=Fy9SdZLBTOo&t=11995s
+

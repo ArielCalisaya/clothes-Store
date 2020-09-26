@@ -15,7 +15,8 @@ const ProductDetails = (props) => {
     return () => {
       // 
     };
-  }, []);
+    
+  }, [dispatch, props.match.params.id]);
   
   if (!product) {
     return null;
@@ -50,7 +51,7 @@ const ProductDetails = (props) => {
             </ul>
             <ul>
               <li>
-                <h4> </h4>
+                <h4>Tallas: Proximamente</h4>
               </li>
             </ul>
           </div>

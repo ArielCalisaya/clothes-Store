@@ -14,7 +14,7 @@ const Navbar = () => {
 
   // ------------------------------------
   const handleEnter = () => {
-    console.log("Enter key is pressed");
+    console.log("Space key is pressed");
     switch (isToggled) {
       case "":
         return setToggled("active");
@@ -41,10 +41,10 @@ const Navbar = () => {
             <Link to="/ropa">Ropa</Link>
           </li>
           <li>
-            <Link href="/">clothes</Link>
+            <Link to="/">clothes</Link>
           </li>
           <li>
-            <Link href="/signin">Account</Link>
+            <Link to="/signin">Account</Link>
           </li>
         </ul>
         <div className="socialBar">
