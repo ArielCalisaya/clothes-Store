@@ -9,27 +9,27 @@ const MapPrendas = (props) => {
   } = props;
 
   return (
-    <div className="w-full md:w-1/3 p-8 flex flex-col flex-grow flex-shrink">
-      <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+    <div className="">
+      <div className="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow">
         <Link
-          className=" w-full block text-center text-green-800 bg-green-200"
+          className="block w-full text-center text-green-800 bg-green-200 "
           to={`/ropa/${_id}`}
         >
           ID: {_id}
         </Link>
         <a href="/ropa" className="flex flex-wrap no-underline">
-          <p className="w-full text-gray-800 text-center md:text-2xl px-6 py-4 md:py-2">
+          <p className="w-full px-6 py-4 text-center text-gray-800 md:text-2xl md:py-2">
             {tipo} {color}
           </p>
-          <div className="text-center bg-purple-700 m-auto w-full">
+          <div className="w-full m-auto text-center bg-purple-700">
             <img
               src={imgExample}
-              className="w-56 image-content inline-block"
+              className="inline-block w-56 image-content"
               alt={imagen}
             />
           </div>
         </a>
-        <p className="text-xl text-center py-4">Disponible</p>
+        <p className="py-4 text-xl text-center">Disponible</p>
         <MapTallas
           className="bg-white"
           talla_S={talla_S}
@@ -37,13 +37,13 @@ const MapPrendas = (props) => {
           talla_L={talla_L}
           key={_id}
         />
-        <div className=" shadow p-2">
-          <p className="text-gray-800 text-center w-full text-lg px-6  my-3">
+        <div className="p-2 shadow ">
+          <p className="w-full px-6 my-3 text-lg text-center text-gray-800">
             Precio: {precio} CLP
           </p>
         </div>
       </div>
-      <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-4">
+      <div className="flex-none p-4 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow">
       </div>
     </div>
   );
