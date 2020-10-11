@@ -10,12 +10,13 @@ import axios from "axios";
 
 const clothesList = () => async (dispatch) => {
   try {
-    dispatch({ type: CLOTHES_LIST_REQUEST });
+      dispatch({ type: CLOTHES_LIST_REQUEST });
     const { data } = await axios.get("/api/clothes/all");
-    dispatch({
-      type: CLOTHES_LIST_SUCCESS,
-      payload: data.result,
-    });
+      dispatch({
+        type: CLOTHES_LIST_SUCCESS,
+        payload: data.result,
+      });
+      
   } catch (error) {
     dispatch({
       type: CLOTHES_LIST_FAIL,

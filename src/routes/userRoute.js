@@ -14,7 +14,7 @@ router.get("/all", (req, res) => {
     if (!err) {
       response = { error: false, msg: data };
     } else {
-      response = { error: true, msg: "Error fetching data, try your best ;D" };
+      response = { error: true, msg: "Error fetching data" };
     }
     res.json(response);
   });
@@ -27,7 +27,7 @@ router.get("/user/:id", (req, res) => {
   User.findById(id, (err, data) => {
     // Fetch user data by id
     if (err) {
-      response = { error: true, msg: "Error fetching data, try your best ;D" };
+      response = { error: true, msg: "Error fetching data" };
     } else {
       response = { error: false, msg: data };
     }
@@ -84,12 +84,12 @@ router.post("/login", (req, res) => {
           });
         } else {
           res.json({
-            message: "Email or Password doesn't Match",
+            message: "No user Found",
           });
         }
       });
     } else {
-      res.json({ message: "No user Found" });
+      res.json({ message: "Email or Password doesn't Match" });
     }
   });
 });
@@ -159,7 +159,7 @@ router.get("/createADM", async (req, res) => {
       name: "exampeledmidq",
       email: "exampeledmidq@gmail.com",
       password:
-        "29045pof4po2,eo120'e1e2Portamemememoonnldelp2034903.,.,.SSSavedok",
+        "29045pof4po.,.SSSavedok",
       isADM: false,
     });
     const newUser = await user.save();

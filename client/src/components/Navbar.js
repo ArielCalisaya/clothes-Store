@@ -31,44 +31,44 @@ const Navbar = () => {
 
   return (
     <Fragment>
-    <div className={`menuToggle ${isToggled}`} onClick={handleEnter} />
+      <div className={`menuToggle ${isToggled}`} onClick={handleEnter} />
       <div className={`navigation ${isToggled}`} onClick={handleEnter}>
-            <ul>
-              <li>
-                <Link to="/">Inicio</Link>
-              </li>
-              <li>
-                <Link to="/ropa">Ropa</Link>
-              </li>
-              <li>
-                <Link to="/">clothes</Link>
-              </li>
-              <li>
-                <Link to="/signin">Account</Link>
-              </li>
-            </ul>
-            <div className="socialBar">
-              <ul>
-                <li>
-                  <a href="/">
-                    <img src={FacebookIcon} alt="facebook" />
-                  </a>
-                </li>
-                <li>
-                  <a href="/">
-                    <img src={TwitterIcon} alt="twitter" />
-                  </a>
-                </li>
-                <li>
-                  <a href="/">
-                    <img src={InstagramIcon} alt="instagram" />
-                  </a>
-                </li>
-              </ul>
-              <a href="mailto:example@gmail.com" className="emailBx">
-                <img src={EmailIcon} alt="" />
+        <ul>
+          <li>
+            <Link to="/">Inicio</Link>
+          </li>
+          <li>
+            <Link to="/ropa">Ropa</Link>
+          </li>
+          <li>
+            <Link to="/">clothes</Link>
+          </li>
+          <li>
+            <Link to="/signin">Account</Link>
+          </li>
+        </ul>
+        <div className="socialBar">
+          <ul>
+            <li>
+              <a href="/">
+                <img src={FacebookIcon} alt="facebook" />
               </a>
-            </div>
+            </li>
+            <li>
+              <a href="/">
+                <img src={TwitterIcon} alt="twitter" />
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img src={InstagramIcon} alt="instagram" />
+              </a>
+            </li>
+          </ul>
+          <a href="mailto:example@gmail.com" className="emailBx">
+            <img src={EmailIcon} alt="" />
+          </a>
+        </div>
       </div>
     </Fragment>
   );

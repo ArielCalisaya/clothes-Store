@@ -13,15 +13,14 @@ const ProductDetails = (props) => {
     let id = props.match.params.id;
     dispatch(detailsProduct(id));
     return () => {
-      // 
+      //
     };
-    
   }, [dispatch, props.match.params.id]);
-  
+
   if (!product) {
     return null;
   }
-  
+
   console.log(product);
   return (
     <div className="textWhite">

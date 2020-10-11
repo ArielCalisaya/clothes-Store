@@ -36,17 +36,17 @@ function Clothes() {
         <AnimatePresence>
           {products.map((product, i) => (
             <motion.div
-            className="flex flex-col flex-grow flex-shrink w-full p-8 md:w-1/3"
+              className="flex flex-col flex-grow flex-shrink w-full p-8 md:w-1/3"
               variants={{
                 hidden: {
                   opacity: 0,
-                  y: -10
+                  y: -10 * i,
                 },
                 visible: (i) => ({
                   opacity: 1,
-                  y:0,
+                  y: 0,
                   transition: {
-                    delay: i * 0.3,
+                    delay: i * 0.2,
                   },
                 }),
               }}
