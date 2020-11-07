@@ -8,7 +8,7 @@ const morgan = require("morgan");
 app.use(morgan("dev")); */
 
 // DB configuration
-require("../util/configDB");
+require("../config/configDB");
 
 //config
 const app = express();

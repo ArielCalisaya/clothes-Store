@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+const { SECRET_KEY } = require('./secretKey')
 
 // In Dev. environment probably want to change the port depending on the local mongodb server
-const mongodburl = process.env.MONGODB_URI || "mongodb://localhost:27017/rimba";
+const mongodburl = process.env.MONGODB_URI || SECRET_KEY;
 
 mongoose
   .connect(mongodburl, {
