@@ -1,4 +1,4 @@
-This project is a MERN app for [Rimba-Clothes](https://github.com/ArielCalisaya/rimba).
+This project is a MERN app for [Clothes Store](https://github.com/ArielCalisaya/clothes-Store).
 
 ## Available Scripts
 
